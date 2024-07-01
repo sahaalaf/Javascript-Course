@@ -14,7 +14,7 @@ function getMarks(mark) {
     });
 }
 
-async function printStudentMarks(){
+(async function printStudentMarks(){
     for(let i of marks){
         try {
             await getMarks(i);
@@ -24,6 +24,4 @@ async function printStudentMarks(){
             console.error("Failed");
         }
     }
-}
-
-printStudentMarks();
+})();
