@@ -14,6 +14,7 @@ function getMarks(mark) {
     });
 }
 
+// no need to call the function, this will automatically called.(iife)
 (async function printStudentMarks(){
     for(let i of marks){
         try {
