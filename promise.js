@@ -1,24 +1,23 @@
-const students = [
-    { id: 1, name: "Sahal" },
-    { id: 2, name: "Alice" },
-    { id: 3, name: "Bob" },
-    { id: 4, name: "Charlie" },
-    { id: 5, name: "David" },
-    { id: 6, name: "Eve" }
-];
+const marks = [45, 34, 23, 56, 76, 32, 31];
 
-function getData(id) {
+function getMarks(mark) {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            console.log("Name:", students[id - 1].name, "ID:", students[id - 1].id);
-            resolve("success");
-        }, 2000);
+        if (mark % 2 === 0) {
+            console.log(mark);
+            resolve("Success");
+        } else {
+            console.log(mark);
+            reject("failed");
+        }
     });
 }
 
-let promise = getData(1);
-
-// status of the promise
-setTimeout(() => {
-    console.log(promise);
-}, 6000);
+for (let i of marks) {
+    getMarks(i)
+        .then(() => {
+            console.log("Promised Success.");
+        })
+        .catch(() => {
+            console.log("Promised Failed.");
+        });
+}
